@@ -16,7 +16,7 @@ for(const file of commandFiles){
 }
 
 client.once('ready', () => {
-    client.user.setActivity(`${prefix}help`, {type: "PLAYING"});
+    client.user.setActivity(`${prefix}help-ads`, {type: "PLAYING"});
     console.log('ready');
 })
 
