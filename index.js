@@ -39,7 +39,7 @@ client.on('message', msg => {
                                 .setColor('#00FF0')
                                 .setTitle('CODE')
                                 .setDescription(`${msg.author} used ${code}.`);
-        msg.channel.send(`${msg.author} you earned 1 point!`).then(sentMsg => sentMsg.delete({timeout:60000}));
+        msg.channel.send(`${msg.author} you earned 250 pancakes!`).then(sentMsg => sentMsg.delete({timeout:60000}));
         client.channels.fetch('712959606552526938').then(c => c.send(embed));
         client.channels.fetch('712711521590968350').then(c => c.send(`p!addbalance 250 ${msg.author}`));
         //Removes the sent code from the codes user will be able to use.
