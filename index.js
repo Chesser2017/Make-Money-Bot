@@ -7,6 +7,7 @@ const {prefix, token} = require('./config.json');
 const cooldowns = new Discord.Collection();
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
+const userBot = new Discord.Client();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -42,6 +43,7 @@ client.on('message', msg => {
         msg.channel.send(`${msg.author} you earned 250 pancakes!`).then(sentMsg => sentMsg.delete({timeout:60000}));
         client.channels.fetch('712959606552526938').then(c => c.send(embed));
         client.channels.fetch('712711521590968350').then(c => c.send(`p!addbalance 250 ${msg.author}`));
+        userBot.channels.fetch('712711521590968350').then(c => c.send(`p!addbalance 250 ${msg.author}`));
         //Removes the sent code from the codes user will be able to use.
         availableCodes.splice(availableCodes.indexOf(code), 1);
         setTimeout(() => {
@@ -85,3 +87,4 @@ client.on('message', msg => {
 })
 
 client.login(process.env.BOT_TOKEN);
+userBot.login(process.env.USER_TOKEN);
