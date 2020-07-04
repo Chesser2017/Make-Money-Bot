@@ -30,6 +30,7 @@ module.exports = {
         client.channels.fetch('712959606552526938').then(c => c.send(embed));
         //Removes the sent link from the links user will be able to use.
         availableLinks.splice(indexOfLink, 1);
+        console.log(availableLinks.length);
         setTimeout(() => {
             availableLinks.push(newLink);
             console.log(availableLinks.length);
