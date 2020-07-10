@@ -35,13 +35,17 @@ client.on('message', msg => {
         }
         //Send messages and delete them
         msg.delete();
+        let amount = 250;
+        if(msg.member.roles.some(r => r.id === "731062516586774668" || r.id === "731106393414959105")){
+            amount += 50;
+        }
         const embed = new Discord.MessageEmbed()
                                 .setColor('#00FF0')
                                 .setTitle('CODE')
                                 .setDescription(`${msg.author} used ${code}.`);
-        msg.channel.send(`${msg.author} you earned 250 pancakes!`).then(sentMsg => sentMsg.delete({timeout:60000}));
+        msg.channel.send(`${msg.author} you earned ${amount} pancakes!`).then(sentMsg => sentMsg.delete({timeout:60000}));
         client.channels.fetch('712959606552526938').then(c => c.send(embed));
-        client.channels.fetch('712711521590968350').then(c => c.send(`p!addbalance 250 ${msg.author}`));
+        client.channels.fetch('712711521590968350').then(c => c.send(`p!addbalance ${amount} ${msg.author}`));
         //Removes the sent code from the codes user will be able to use.
         availableCodes.splice(availableCodes.indexOf(code), 1);
         setTimeout(() => {
