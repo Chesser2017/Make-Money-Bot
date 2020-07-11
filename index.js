@@ -36,7 +36,7 @@ client.on('message', msg => {
         //Send messages and delete them
         msg.delete();
         let amount = 250;
-        if(msg.member.roles.cache.some(r => r.id === "730885241971015742" || r.id === "731106393414959105")){
+        if(msg.member.roles.cache.some(r => r.id === "730885241971015742" || r.id === "633724626287067167")){
             amount += 50;
         }
         const embed = new Discord.MessageEmbed()
