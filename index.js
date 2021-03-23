@@ -45,7 +45,7 @@ client.on('message', msg => {
                                 .setDescription(`${msg.author} used ${code}.`);
         msg.channel.send(`${msg.author} you earned ${amount} :Infonium:`).then(sentMsg => sentMsg.delete({timeout:60000}));
         client.channels.fetch('822559862574678027').then(c => c.send(embed));
-        client.channels.fetch('822559862574678027').then(c => c.send(`+ ${amount} ${msg.author}`));
+        client.channels.fetch('822559862574678027').then(c => c.send(`+ ${amount} <:Infonium:633993157108826112> ${msg.author}`));
         //Removes the sent code from the codes user will be able to use.
         availableCodes.splice(availableCodes.indexOf(code), 1);
         setTimeout(() => {
