@@ -30,12 +30,12 @@ client.on('message', msg => {
     if(codes.includes(code)){
         //If there are no usable codes
         if(availableCodes.length < 1){
-            msg.channel.send("You have run out of usable codes!");
+            msg.channel.send("You have run out of usable codes, try again tomorrow!");
             return;
         }
         //Send messages and delete them
         msg.delete();
-        let amount = 10;
+        let amount = 25;
         if(msg.member.roles.cache.some(r => r.id === "730885241971015742" || r.id === "633724626287067167")){
             amount += 50;
         }
@@ -43,9 +43,9 @@ client.on('message', msg => {
                                 .setColor('#00FF0')
                                 .setTitle('CODE')
                                 .setDescription(`${msg.author} used ${code}.`);
-        msg.channel.send(`${msg.author} you earned ${amount} Infonium!`).then(sentMsg => sentMsg.delete({timeout:60000}));
-        client.channels.fetch('605485160166588452').then(c => c.send(embed));
-        client.channels.fetch('605485160166588452').then(c => c.send(`p!addbalance ${amount} ${msg.author}`));
+        msg.channel.send(`${msg.author} you earned ${amount} :Infonium:`).then(sentMsg => sentMsg.delete({timeout:60000}));
+        client.channels.fetch('822559862574678027').then(c => c.send(embed));
+        client.channels.fetch('822559862574678027').then(c => c.send(`+ ${amount} ${msg.author}`));
         //Removes the sent code from the codes user will be able to use.
         availableCodes.splice(availableCodes.indexOf(code), 1);
         setTimeout(() => {
