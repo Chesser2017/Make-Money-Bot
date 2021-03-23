@@ -26,8 +26,8 @@ module.exports = {
                                 .setTitle('CODE')
                                 .setDescription(`${user} used ${code}.`);
         msg.channel.send(`${user} you earned 1 point!`).then(sentMsg => sentMsg.delete({timeout:60000}));
-        client.channels.fetch('712959606552526938').then(c => c.send(embed));
-        client.channels.fetch('712711521590968350').then(c => c.send(`#points ${user} +1`));
+        client.channels.fetch('605485160166588452').then(c => c.send(embed));
+        client.channels.fetch('605485160166588452').then(c => c.send(`#points ${user} +1`));
         //Removes the sent code from the codes user will be able to use.
         availableCodes.splice(availableCodes.indexOf(code), 1);
         setTimeout(() => {
