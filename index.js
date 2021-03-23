@@ -35,7 +35,7 @@ client.on('message', msg => {
         }
         //Send messages and delete them
         msg.delete();
-        let amount = 250;
+        let amount = 10;
         if(msg.member.roles.cache.some(r => r.id === "730885241971015742" || r.id === "633724626287067167")){
             amount += 50;
         }
@@ -43,9 +43,9 @@ client.on('message', msg => {
                                 .setColor('#00FF0')
                                 .setTitle('CODE')
                                 .setDescription(`${msg.author} used ${code}.`);
-        msg.channel.send(`${msg.author} you earned ${amount} pancakes!`).then(sentMsg => sentMsg.delete({timeout:60000}));
-        client.channels.fetch('712959606552526938').then(c => c.send(embed));
-        client.channels.fetch('712711521590968350').then(c => c.send(`p!addbalance ${amount} ${msg.author}`));
+        msg.channel.send(`${msg.author} you earned ${amount} Infonium!`).then(sentMsg => sentMsg.delete({timeout:60000}));
+        client.channels.fetch('605485160166588452').then(c => c.send(embed));
+        client.channels.fetch('605485160166588452').then(c => c.send(`p!addbalance ${amount} ${msg.author}`));
         //Removes the sent code from the codes user will be able to use.
         availableCodes.splice(availableCodes.indexOf(code), 1);
         setTimeout(() => {
