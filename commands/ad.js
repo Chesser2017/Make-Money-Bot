@@ -27,7 +27,7 @@ module.exports = {
                                 .setTitle('AD')
                                 .setDescription(`${user} used ${newLink}.`);
         msg.channel.send(`${user}, your link: ${newLink}`).then(sentMsg => sentMsg.delete({timeout:60000}));
-        client.channels.fetch('605485160166588452').then(c => c.send(embed));
+        client.channels.fetch('822559862574678027').then(c => c.send(embed));
         //Removes the sent link from the links user will be able to use.
         availableLinks.splice(indexOfLink, 1);
         console.log(availableLinks.length);
