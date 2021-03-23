@@ -25,9 +25,9 @@ module.exports = {
                                 .setColor('#00ff00')
                                 .setTitle('CODE')
                                 .setDescription(`${user} used ${code}.`);
-        msg.channel.send(`${user} you earned 25 :Infonium:`).then(sentMsg => sentMsg.delete({timeout:60000}));
+        msg.channel.send(`${user} you earned 25 :Infonium: `).then(sentMsg => sentMsg.delete({timeout:60000}));
         client.channels.fetch('822559862574678027').then(c => c.send(embed));
-        client.channels.fetch('822559862574678027').then(c => c.send(`${user} +25 :Infonium:`));
+        client.channels.fetch('822559862574678027').then(c => c.send(`${user} +25 :Infonium: `));
         //Removes the sent code from the codes user will be able to use.
         availableCodes.splice(availableCodes.indexOf(code), 1);
         setTimeout(() => {
